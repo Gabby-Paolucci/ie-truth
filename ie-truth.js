@@ -4,7 +4,7 @@ function IeVersion() {
 		IsIE: false,
 		TrueVersion: 0,
 		ActingVersion: 0,
-		CompatabilityMode: false
+		CompatibilityMode: false
 	};
 
 	//Try to find the Trident version number
@@ -29,7 +29,7 @@ function IeVersion() {
 	//If we have both a Trident and MSIE version number, see if they're different
 	if (value.IsIE && value.TrueVersion > 0 && value.ActingVersion > 0) {
 		//In compatibility mode if the trident number doesn't match up with the MSIE number
-		value.CompatabilityMode = value.TrueVersion != value.ActingVersion;
+		value.CompatibilityMode = value.TrueVersion != value.ActingVersion;
 	}
 	return value;
 }
