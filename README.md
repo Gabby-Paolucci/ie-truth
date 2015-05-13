@@ -5,12 +5,12 @@ JavaScript function to detect if browser is Internet Explorer (IE), and the true
 Include ``ie-truth.js`` in your HTML:
 
 ```html
-<script type="text/javascript" src="ie-truth.js"></script>
+<script type="text/javascript" src="//cdn.rawgit.com/Gavin-Paolucci-Kleinow/ie-truth/master/ie-truth.js"></script>
 ```
 
 Or minified:
 ```html
-<script type="text/javascript" src="ie-truth.min.js"></script>
+<script type="text/javascript" src="//cdn.rawgit.com/Gavin-Paolucci-Kleinow/ie-truth/master/ie-truth.min.js"></script>
 ```
 
 Call the function to get the IE information:
