@@ -2,6 +2,8 @@ function IeVersion() {
     //Set defaults
     var value = {
 		IsIE: false,
+		IsEdge: false,
+		EdgeHtmlVersion: 0,
 		TrueVersion: 0,
 		ActingVersion: 0,
 		CompatibilityMode: false
@@ -19,7 +21,7 @@ function IeVersion() {
 	var msie = navigator.userAgent.match(/MSIE (\d+)/);
 	if (msie) {
 	    value.IsIE = true;
-        //Find the IE version number from the user agent string
+        	//Find the IE version number from the user agent string
 		value.ActingVersion = parseInt(msie[1]);
 	} else {
 		//Must be IE 11 in "edge" mode
@@ -30,6 +32,14 @@ function IeVersion() {
 	if (value.IsIE && value.TrueVersion > 0 && value.ActingVersion > 0) {
 		//In compatibility mode if the trident number doesn't match up with the MSIE number
 		value.CompatibilityMode = value.TrueVersion != value.ActingVersion;
+	}
+	
+	//Try to find Edge and the EdgeHTML vesion number
+	var edge = navigator.userAgent.match(/Edge\/(\d+\.\d+)$/);
+	if (edge)
+	{
+		value.IsEdge = true;
+		value.EdgeHtmlVersion = edge[1];
 	}
 	return value;
 }
